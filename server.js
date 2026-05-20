@@ -30,9 +30,9 @@ app.post("/api/chat", async (req, res) => {
   method: "POST",
 
   headers: {
-    "Authorization": `Bearer ${process.env.OPENROUTER_KEY}`,
-    "Content-Type": "application/json"
-  },
+  "Content-Type": "application/json",
+  "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`
+},
 
   body: JSON.stringify({
 
@@ -100,6 +100,20 @@ res.json({ reply });
     });
 
   }
+
+});
+
+/*
+===================================
+ START SERVER
+===================================
+*/
+
+const PORT = 5000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
 
 });
 

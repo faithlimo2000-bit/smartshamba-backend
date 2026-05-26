@@ -38,7 +38,7 @@ app.post("/api/chat", async (req, res) => {
 
   model: "openrouter/auto",
   temperature: 0.3,
-  max_tokens: 250,
+  max_tokens: 500,
 
    messages: [
 

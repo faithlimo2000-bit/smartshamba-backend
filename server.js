@@ -90,8 +90,9 @@ const reply =
     ? data.choices[0].message.content
     : "AI could not answer right now.";
 
-res.json({ reply });
+console.log("AI REPLY:", reply);
 
+res.json({ reply });
   } catch (error) {
 
     console.log("❌ SERVER ERROR:");

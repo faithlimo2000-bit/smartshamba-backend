@@ -78,14 +78,17 @@ Answer clearly
     ]
   })
 });
-
-   const data = await response.json();
+const data = await response.json();
 
 console.log("FULL RESPONSE:", data);
 
 const reply =
-  data?.choices?.[0]?.message?.content ||
-  "AI could not answer right now.";
+  data.choices &&
+  data.choices[0] &&
+  data.choices[0].message &&
+  data.choices[0].message.content
+    ? data.choices[0].message.content
+    : "AI could not answer right now.";
 
 res.json({ reply });
 
